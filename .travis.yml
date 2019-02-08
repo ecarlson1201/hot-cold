@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: EtGFrzm6jJnOzM9RZyYQ/lTR7XiRYwF2Do21JUtPK81QQRMNPsgVdYjEuHf4iLOHBSuYcihTWsV8tXDF8t5RpLW4jmxfiK6JPlw2lUCyUh+CaqZNJEBo5FP+x4SQL2TilWkZR5hwYJnBlq3wOpgksom063k0LxyhuVHd1bcmrJlZXMbSRSdJ5B9Z/rnQ/d2TLkXS8HDFBBd2sMUQWv3pzPXVxgIqreRxfHsOKt67E6HSd2VPLVO24yURSgnaoMjls6pqqHTezI6iDPkWUEwc5gU6PWtLOjXr7MRXThrGuDegLiMdZXn3Lr9LiXyvEnCdUxllDwPB5WDkeRTOMxNyi7PEwjEk7qpvY5bXPsn1hK7bw1YogteiLnmh0Q4i7xMgoqYoUWQ74cH+O/epOdsHaQ72jmHWb7F7sShbnEP7JYGEt0Hbn8z7HgRezsjQHHF3wR0C0o58mMRa8aVS+k+VNR/C9slPGtA1oEObYiQJOhWJcAtFG8QRXWVoE4ex5K7gqlQo901RTQAokVNFu1ANmfivMYIk50TLKgQEGY07zXpkv/1vyA/gBRkAkaSiRRI9qdLkm2eHGiQvApl5u4XKbnrPzAwJ/UXgjmHjxRjymRsyV5R4DIL0iu1S+GhO3YwwYwyacdbO8VlRzPUaFRxEWgWQ7QezCUuG7eilGKGjZlY=
+  app: hot-cold
+  on:
+    repo: ecarlson1201/hot-cold
