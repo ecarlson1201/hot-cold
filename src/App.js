@@ -3,18 +3,23 @@ import './App.css';
 import Game from './components/game'
 import GuessCounter from './components/guess-counter'
 
+const reset = {
+  number: Math.floor(Math.random() * 100) + 1,
+  guessList: [],
+  currentGuess: null
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      number: Math.floor(Math.random() * 100) + 1,
-      guessList: [],
-      currentGuess: null
-    }
+    this.state = reset
+  }
+
+  handleReset(){
+    this.setState({reset})
   }
 
   setGuessList(guess) {
-    console.log(guess)
     this.setState({
       guessList: [...this.state.guessList, parseInt(guess)]
     })
@@ -29,7 +34,7 @@ class App extends Component {
   hotOrCold(guess) {
     const difference = this.state.number - guess
 
-    if(this.state.guessList.length === 0){
+    if (this.state.guessList.length === 0) {
       return "Make Your Guess"
     }
 
@@ -45,9 +50,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.number)
-    console.log(this.state.guessList)
-    console.log(this.state.currentGuess)
     return (
       <div className="App">
         <button>New Game</button>
